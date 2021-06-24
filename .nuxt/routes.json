@@ -1,0 +1,16 @@
+[
+  {
+    "name": "scripts-id",
+    "path": "/scripts/:id?",
+    "component": "/var/www/yapo-studio.org/pages/scripts/_id.vue",
+    "chunkName": "pages/scripts/_id",
+    "_name": "_df376b6c"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/var/www/yapo-studio.org/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_29c3baae"
+  }
+]

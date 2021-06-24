@@ -1,0 +1,42 @@
+[
+    {
+        "objectID":"1",
+        "linkTitle":"simplestScript",
+        "type": "audioVisu",
+        "title": "The Simplest of them all",
+        "description":"This is a fairly vanilla re-creation of the FFT Unknown treasures script available on therewasaguy.github.io",
+        "libraries":[{
+            "name": "p5.js",
+            "side": "client",
+            "src": "https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js",
+            "async": false
+        },
+        {
+            "name": "p5.sound.js",
+            "side": "client",
+            "src": "https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/addons/p5.sound.js",
+            "async": false
+        }
+        ]
+    },
+    {
+        "objectID":"2",
+        "linkTitle":"noiseRings",
+        "type": "audioVisu",
+        "title": "The Noise of the Rings",
+        "description":"A polar-coordinated, ring-shaped reuse of the Simplest script for audio visualization",
+        "libraries":[{
+            "name": "p5.js",
+            "side": "client",
+            "src": "https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js",
+            "async": false
+        },
+        {
+            "name": "p5.sound.js",
+            "side": "client",
+            "src": "https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/addons/p5.sound.js",
+            "async": false
+        }
+        ]
+    }
+]

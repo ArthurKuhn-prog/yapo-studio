@@ -5,7 +5,7 @@
         
         <button type="button" ref="toggle" v-on:click="scriptLauncher()">Start the script</button>
 
-        <div ref="canvas" style="width:800px; height: 800px; border: 1px solid black;"></div>
+        <div ref="canvas" style="width:80vw; height: 50vh; border: 1px solid black;"></div>
     </div>
 </template>
 

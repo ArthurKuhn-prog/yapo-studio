@@ -1,1 +1,3 @@
-{"name":"yapo-studio","dependencies":{"nuxt":"^2.4.5","tailwindcss":"^2.2.2"},"scripts":{"dev":"nuxt"}}
+{"name":"yapo-studio","dependencies":{"nuxt":"^2.4.5"},"scripts":{"dev":"nuxt", "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"}}

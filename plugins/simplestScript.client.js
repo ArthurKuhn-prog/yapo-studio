@@ -3,50 +3,49 @@ export default function(context, inject){
         simplestScript
     })
 
-    function simplestScript(canvas){
+    function simplestScript(canvas) {
+        let localCanvas = canvas;
+        console.log(localCanvas.clientWidth); 
         
+        let sketch = function(s){
+            let fft = new p5.FFT(0.9, 1024);
 
-        const sketch = (s) => {
-            s.setup = () => {
+            let cnv = '';
+
+            s.setup = function() {
                 const source = new p5.AudioIn();
-        source.start();
+                source.start();
 
-        const fft = new p5.FFT(0.9, 1024);
-        fft.setInput(source); //What to 
-        
-              let cnv = s.createCanvas(800,800);
-              cnv.parent(canvas);
-              s.background(33, 33, 33);
-              /*const r = window.innerHeight * 0.45;
-              const theta = 0;
-      
-              const dx = r * Math.cos(theta);
-              const dy = r * Math.sin(theta);*/
-              //s.noLoop();
+                fft.setInput(source);
+
+                cnv = s.createCanvas(localCanvas.clientWidth,localCanvas.clientHeight);
+                cnv.parent(localCanvas);
+
+                s.background(33,33,33);
             }
-      
-            s.draw = () => {
+
+            s.draw = function(){
+
                 let divisions = 2;
                 let speed = 1;
         
-                var h = window.innerHeight/divisions;
+                var h = localCanvas.clientHeight/divisions;
                 var spectrum = fft.analyze(); //Is the result of the fft analysis
         
                 var scaledSpectrum = s.splitOctaves(spectrum, 6);
                 var len = scaledSpectrum.length;
-        
-                //s.clear();
+
                 s.copy(cnv,0,0,window.innerWidth,window.innerHeight,0, 2,window.innerWidth,window.innerHeight-20)
-                //s.background(33, 33, 33);
+                s.background(33, 33, 33);
         
                 s.strokeWeight(1);
                 s.stroke(245);
                 s.fill(33,33,33);
         
                 s.drawLine(len, scaledSpectrum, h);
-              }
-        
-              s.drawLine = (len, scaledSpectrum, h) => {
+            }
+
+            s.drawLine = (len, scaledSpectrum, h) => {
                 s.beginShape();
         
                 s.curveVertex(0,h) //We create a first vertex at the far corner
@@ -132,8 +131,9 @@ export default function(context, inject){
                 return val;
             
               }   
+            
         }
 
-        let tut = new p5(sketch);
+        const script = new p5(sketch);
     }
 }
